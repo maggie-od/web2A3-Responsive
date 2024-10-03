@@ -1,0 +1,467 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+    TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Settings: used with preprocessors and contain font, colors definitions, etc.
+2.0 - Tools: globally used mixins and functions. Use for preprocessor only.
+3.0 - Generic: reset and/or normalize styles, box-sizing definition, etc. 
+4.0 - Elements: styling for bare/generic HTML elements 
+        - Typography: Typography, Links, Address
+5.0 - Objects: class-based selectors which define undecorated design patterns, building blocks
+        - Framework
+6.0 - Components: specific designed components
+        - Nav
+        - Hero 
+        - Backgrounds & Spacing
+        - Footer 
+7.0 - Utilities: utilities and helper classes with ability to override anything which goes before in the triangle, eg. hide helper class
+        - Screen Reader
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+    3.0 - GENERIC
+-------------------------------------------------------------- */
+/* for some time, universal and html or body selector are all that will appear under here  */ 
+
+
+/* ----- UNIVERSAL ----- */
+
+* {
+    -o-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.25rem;
+}
+
+
+
+/*--------------------------------------------------------------
+    4.0 - ELEMENTS
+    - single (not contextual) element selectors only. No classes. No IDs. No contextual selectors. 
+-------------------------------------------------------------- */
+/* shared styles across elements are grouped at the top, not under an individual elements. Reduces repeated styles */ 
+
+
+
+/* ----- TYPOGRAPHY ----- */
+
+
+/* ----- LINKS ----- */
+a {
+    text-decoration: none;
+    color: #d42c59;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* ----- ADDRESS ----- */
+
+
+
+
+/*--------------------------------------------------------------
+    5.0 - OBJECTS
+-------------------------------------------------------------- */
+/* for some time, only .wrapper and .row are likely to appear under this category */ 
+
+/* ----- FRAMEWORK ----- */
+.wrapper {
+    margin: 0 auto;
+    max-width: 1240px;
+    padding: 0 40px;
+}
+
+.flex {
+    display: flex;
+}
+
+
+/*--------------------------------------------------------------
+    6.0 - COMPONENTS
+-------------------------------------------------------------- */
+
+li {
+    list-style: none;
+    margin: 0;
+    font-weight: 700;
+}
+
+h1 { 
+    font-size: clamp(2rem, 2.1vw + 1.4rem, 3rem);
+    font-weight: 900;
+    color: #394053;
+}
+
+p{
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #394053;
+    margin:0;
+    line-height: 36px;
+}
+
+h2 {
+    font-size: clamp(1.6rem, 1.1vw + 1.3rem, 2.1rem);
+    font-weight: 900;
+    color: #394053;
+    margin: 0;
+    
+}
+
+img {
+    width: 349px;
+    height:349px;
+}
+
+/* shared styles across components are grouped at the top, not under an individual component. Reduces repeated styles */ 
+
+.pink_btn a {
+    justify-self: center;
+    align-self: center;
+}
+
+section.pink_bkg a{
+    color: #FFDDD2;
+    text-transform: uppercase;
+}
+
+div.shapes .flex {
+    gap: 28px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+section.pink_bkg{
+    margin: 0 auto;
+}
+
+section.Lpink_bkg > .grid{
+    grid: auto auto 1fr / 350px 1fr;
+    gap: 20px;
+    padding: 40px;
+}
+
+section.Lpink_bkg > .grid > img{
+    grid-area: 1 / 1 / 4 / 2;
+}
+
+.nav ul {
+    grid: auto/ auto auto auto;
+    gap: 40px;
+}
+
+header > div.grid {
+    grid: auto / auto auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+div.circles {
+    grid: auto/ auto auto auto;
+    gap: 24px;
+    justify-content: start;
+}
+
+div.link {
+    grid: auto/ auto auto;
+    justify-content: end;
+    align-items: center;
+}
+
+.pink_bkg > div.grid {
+    justify-items: center;
+    max-width: 760px;
+    text-align: center;
+}
+
+section.Lpink_bkg {
+    margin:60px auto;
+}
+
+div.link {
+    align-self: end;
+}
+
+/* hero / footer / nav -- are considered components because they'd repeat on across pages on a multi page site. be careful to not get them in the habit of styling based on the 'content' that appears on the page but rather what components make those up */ 
+
+
+/* ----- NAV ----- */
+
+
+
+/* ----- HERO ----- */
+
+
+/* ----- BACKGROUNDS AND SPACING ----- */
+
+
+/* ----- FOOTER ----- */
+.footer {
+    background-color: #D42C59;
+    margin-top: 60px;
+    border-bottom: solid 16px #F2B100;
+    padding-top: 40px; 
+    padding-bottom: 40px;
+}
+
+.footer > div.grid {
+    grid: auto auto auto / 1fr 1fr;
+}
+
+/*--------------------------------------------------------------
+    7.0 - UTILITY
+-------------------------------------------------------------- */
+/* only classes that could be used on 'any' element should go here  */ 
+
+.nav {
+    justify-self: self-end;
+}
+
+.arrow{
+    width:24px;
+    height: 24px;
+}
+
+.logo {
+    color: #D42C59;
+    font-family: "Poppins", sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.pink_bkg {
+    background-color: #FFDDD2;
+    padding-bottom: 60px;
+}
+
+.pink_btn {
+    background-color: #D42C59;
+    height: 45px;
+    margin-top: 34px;
+    padding: 14px 40px;
+}
+
+.Lpink_bkg {
+    background-color: white;
+    border: solid 16px #FFDDD2;
+    margin: 0 auto;
+    position: relative;
+}
+
+.circle {
+    background-color: #F2B100;
+    width: 62px;
+    height: 62px;
+    border-radius: 31px;
+}
+
+.DPsquare {
+    background-color: #D42C59;
+    width: 62px;
+    height: 62px;
+}
+
+.LPsquare {
+    background-color: #FFDDD2;
+    width: 62px;
+    height: 62px;
+}
+
+.grid {
+    display: grid}
+
+.Flogo {
+    color: white;
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.Lpink_c {
+    width:47px;
+    height: 47px;
+    border-radius: 24px; 
+    background-color: #FFDDD2;
+
+}
+
+.pink_box {
+    background: #FFFFFF33;
+    border: solid 4px #FFDDD2;
+    padding: 20px 60px;
+}
+
+.Lpink_btn {
+    background-color: #FFDDD2;
+    padding:14px 60px;
+    text-align: center;
+}
+
+.boxes {
+    gap: 9px;
+    justify-content: end;
+}
+
+.circles{
+    padding-top: 18px;
+}
+
+.line {
+    border-bottom:solid 4px #d42c59;
+    transform: skewY(-10deg);
+}
+
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+
+/*--------------------------------------------------------------
+    5.0 - Media Queries
+-------------------------------------------------------------- */
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
+    div.shapes .flex{
+        justify-content: center;
+    }
+    
+    section.Lpink_bkg > .grid{
+        grid: auto auto 1fr auto/ 1fr;
+        gap: 20px;
+        padding: 40px 80px;
+    }
+
+    section.Lpink_bkg {
+        margin: 60px 40px;
+    }
+
+}
+
+
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+    header > div.grid {
+        grid: auto auto / auto;
+        margin-bottom: 0px;
+        margin-top: 40px;
+    }
+
+    header .nav{
+        background-color: #F2B100;
+        margin-top: 30px;
+        padding: 0 40px;
+    }
+    
+    p{
+        font-size: 1rem;
+    }
+
+    .pink_bkg {
+        background-color: #FFDDD2;
+        max-width:  390px;
+        height: 493px;
+    }
+
+    .nav {
+        width: 100%;
+
+    }
+
+    .Lpink_bkg {
+        max-width: 360px;
+    }
+
+    img {
+        width: 290px;
+        height: 290px;
+        justify-self: center;
+    }
+    section.Lpink_bkg > .grid{
+        grid: auto auto 1fr auto/ 1fr;
+        gap: 20px;
+        padding: 20px 20px;
+    }
+
+    .pink_btn {
+        margin-top: 34px;
+        padding: 12px 70px;
+    }
+
+    .footer > div.grid {
+        grid: auto auto auto / 1fr;
+    }
+
+    div.circles {
+        padding-bottom: 40px;
+        justify-content: center;
+    }
+
+    .boxes {
+        justify-content: center;
+    }
+
+    div.link {
+        justify-content: start;
+    }
+
+    .shapes .flex div:nth-child(n+13) {
+        display: none;
+    }
+   
+    div.shapes .flex {
+        justify-content: center;
+    }
+
+    .logo {
+        justify-self: center;
+    }
+
+    .wrapper {
+        padding: 0 30px;
+    }
+
+    header .wrapper {
+        padding: 0;
+    }
+
+    a {
+        font-size: 18px;
+    }
+
+    h1 { 
+        line-height: 55px;
+    }
+
+    h2 {
+        line-height: 44px;
+    }
+
+    ul.grid {
+        padding: 0;
+        justify-content: center;
+    }
+
+    footer .wrapper > div:first-child {
+        text-align: center;
+    }
+
+    .Lpink_btn {
+        padding:14px 100px;
+    }
+}
